@@ -14,7 +14,7 @@ int main()
     std::cout << "Stack testing\n";
     try
     {
-        StackArray<int> intStack(3);
+        StackArray<int> intStack(-3);
 
         intStack.push(1);
         intStack.push(2);
@@ -25,10 +25,10 @@ int main()
             std::cout << intStack.pop() << " ";
         }
         std::cout << std::endl;
-        //intStack.pop();
+        intStack.pop();
         std::cout << std::endl;
 
-        StackArray<std::string> stringStack(6);
+        StackArray<std::string> stringStack(2);
 
         stringStack.push("a");
         stringStack.push("b");
@@ -63,10 +63,17 @@ int main()
 
     std::cout << text1 << (isBalanced1 ? " is balanced" : " is not balanced") << std::endl;
 
+    std::string text2 = "{a[b]c}(d)[";
+    int maxDeep2 = 3;
+
+    bool isBalanced2 = checkBalanceBrackets(text2, maxDeep2);
+
+    std::cout << text2 << (isBalanced2 ? " is balanced" : " is not balanced") << std::endl;
+
     //QueueArray
     std::cout << "\nQueue testing\n";
     try {
-        QueueArray<int> queue(-1);
+        QueueArray<int> queue(-3);
         queue.enQueue(1);
         queue.enQueue(2);
         queue.enQueue(3);
