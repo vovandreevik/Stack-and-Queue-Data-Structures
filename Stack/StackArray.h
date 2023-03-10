@@ -22,6 +22,11 @@ public:
         arr = new T[size];
     }
 
+    StackArray(const StackArray<T>& src) = delete;
+    StackArray(StackArray<T>&& src) = delete;
+    StackArray& operator=(const StackArray<T>& src) = delete;
+    StackArray& operator=(StackArray<T>&& src) = delete;
+
     ~StackArray()
     {
         delete[] arr;

@@ -18,6 +18,12 @@ public:
         }
         queueArray = new T[size];
     }
+
+    QueueArray(const QueueArray<T>& src) = delete;
+    QueueArray(QueueArray<T>&& src) = delete;
+    QueueArray& operator=(const QueueArray<T>& src) = delete;
+    QueueArray& operator=(QueueArray<T>&& src) = delete;
+
     ~QueueArray() {
         delete[] queueArray;
     }

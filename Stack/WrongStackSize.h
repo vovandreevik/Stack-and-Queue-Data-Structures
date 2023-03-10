@@ -15,6 +15,6 @@ class WrongQueueSize : public std::exception
 public:
     const char* what() const noexcept
     {
-        return "Invalid queue size!";
+        return "Wrong queue size!";
     }
 };

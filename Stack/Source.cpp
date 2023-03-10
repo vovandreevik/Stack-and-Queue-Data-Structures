@@ -11,6 +11,7 @@ bool checkBalanceBrackets(const std::string& text, const int maxDeep);
 int main()
 {
     //StackArray
+    std::cout << "Stack testing\n";
     try
     {
         StackArray<int> intStack(-1);
@@ -27,12 +28,11 @@ int main()
         intStack.pop();
         std::cout << std::endl;
 
-        StackArray<std::string> stringStack(-6);
+        StackArray<std::string> stringStack(6);
 
         stringStack.push("a");
         stringStack.push("b");
         stringStack.push("c");
-        stringStack.push("d");
         std::cout << std::endl;
 
         while (!stringStack.isEmpty())
@@ -43,34 +43,33 @@ int main()
     }
     catch (const std::exception& e)
     {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
         exit(-1);
     }
 
     //function
+    std::cout << "\nFunction testing\n";
     std::string text = "[a{b]c}(d)";
     int maxDeep = 3;
 
     bool isBalanced = checkBalanceBrackets(text, maxDeep);
 
-    std::cout << (isBalanced ? "Balanced" : "Not balanced") << std::endl;
+    std::cout << text <<(isBalanced ? " is balanced" : " is not balanced") << std::endl;
 
     std::string text1 = "{a[b]c}(d)";
     int maxDeep1 = 3;
 
     bool isBalanced1 = checkBalanceBrackets(text1, maxDeep);
 
-    std::cout << (isBalanced1 ? "Balanced" : "Not balanced") << std::endl;
+    std::cout << text1 << (isBalanced1 ? " is balanced" : " is not balanced") << std::endl;
 
     //QueueArray
+    std::cout << "\nQueue testing\n";
     try {
-        QueueArray<int> queue(-7);
+        QueueArray<int> queue(-1);
         queue.enQueue(1);
         queue.enQueue(2);
         queue.enQueue(3);
-        queue.enQueue(4);
-        queue.enQueue(5);
-        queue.enQueue(6);
         while (!queue.isEmpty()) {
             std::cout << queue.deQueue() << " ";
         }
@@ -79,7 +78,7 @@ int main()
         std::cout << std::endl;
     }
     catch (std::exception& e) {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
         exit(-1);
     }
 
