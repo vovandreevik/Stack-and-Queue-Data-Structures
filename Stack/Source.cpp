@@ -14,18 +14,18 @@ int main()
     std::cout << "Stack testing\n";
     try
     {
-        StackArray<int> intStack(-1);
+        StackArray<int> intStack(3);
 
         intStack.push(1);
         intStack.push(2);
         intStack.push(3);
-
+  
         while (!intStack.isEmpty())
         {
             std::cout << intStack.pop() << " ";
         }
         std::cout << std::endl;
-        intStack.pop();
+        //intStack.pop();
         std::cout << std::endl;
 
         StackArray<std::string> stringStack(6);
@@ -59,7 +59,7 @@ int main()
     std::string text1 = "{a[b]c}(d)";
     int maxDeep1 = 3;
 
-    bool isBalanced1 = checkBalanceBrackets(text1, maxDeep);
+    bool isBalanced1 = checkBalanceBrackets(text1, maxDeep1);
 
     std::cout << text1 << (isBalanced1 ? " is balanced" : " is not balanced") << std::endl;
 
