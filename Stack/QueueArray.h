@@ -27,12 +27,12 @@ public:
     ~QueueArray() {
         delete[] queueArray;
     }
-    void enQueue(const T& e) {
+    void enQueue(const T& element) {
         if (tail == size - 1) {
             throw QueueOverflow();
         }
         tail++;
-        queueArray[tail] = e;
+        queueArray[tail] = element;
         if (head == -1) {
             head = 0;
         }

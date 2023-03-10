@@ -32,14 +32,14 @@ public:
         delete[] arr;
     }
 
-    void push(const T& e)
+    void push(const T& element)
     {
         if (top == size - 1)
         {
             throw StackOverflow();
         }
         top++;
-        arr[top] = e;
+        arr[top] = element;
     }
 
     T pop()
@@ -48,9 +48,9 @@ public:
         {
             throw StackUnderflow();
         }
-        T elem = arr[top];
+        T element = arr[top];
         top--;
-        return elem;
+        return element;
     }
 
     bool isEmpty()
